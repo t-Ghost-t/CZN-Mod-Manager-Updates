@@ -27,6 +27,15 @@ are verified before replacement. A retained helper waits for the Manager to exit
 keeps a durable rollback journal, and checks that the new app starts. Interrupted
 updates recover on the next launch.
 
+Starting with Manager 1.28, game-changing actions also check both signed update
+indexes before they begin. This catches updates published while the Manager stays
+open, including replacements for the same game build. A detected application or
+compatibility update blocks mod changes until it is installed. Dismissing the
+notice or subsequently going offline does not clear a known pending update.
+These parallel checks download only indexes, with no game scan or game-file copy.
+When GitHub is unreachable and no newer update is known, matching cached support
+remains usable. Local game-revision checks still run before and during file writes.
+
 Full application self-updating is available beginning with Manager 1.24. Earlier
 builds only support compatibility-data downloads and require this initial upgrade.
 
