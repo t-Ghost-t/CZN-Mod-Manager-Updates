@@ -7,16 +7,14 @@ resources, private migration records, original mod packages, or signing secrets.
 The Manager verifies downloads against a public key built into the application.
 Downloading a key from this repository does not establish trust.
 
-Compatibility releases contain `index.json` and `preview-index.json`. They bind
-support to the exact installed game revision. Missing support blocks game-file
+Compatibility updates match the exact installed game revision. Missing support blocks game-file
 changes and preserves the mod library and selected load order. A game update can
 replace only some files; clean recovery data may still require the official
 launcher's Verify/Repair. The Manager does not delete game resources.
 
 Complete application updates use a separate, fixed `application-updates` release.
-Its signed `app-index.json` and `preview-app-index.json` point to immutable app
-release archives. Publishing compatibility data does not displace the app channel.
-Preview and stable channels are separate.
+Its signed indexes point to complete app releases. Game compatibility updates and
+application updates are distributed independently.
 
 In the Manager, choose **Tools > Check for updates**. An available application
 update offers **Update and restart**. It can replace the outer launcher, packaged
@@ -29,9 +27,5 @@ updates recover on the next launch.
 Full application self-updating is available beginning with Manager 1.24. Earlier
 builds only support compatibility-data downloads and require this initial upgrade.
 
-Routine compatibility previews have compiler and signed-artifact validation. Per-mod
-installation/restoration sandbox tests are optional for those data updates. Application
-releases have separate updater and runtime tests. Release notes identify the validation
-performed; live gameplay may be unverified.
 This is an unofficial community tool and is not affiliated with the game's developer
 or publisher. Do not submit game archives or private keys in issues.
