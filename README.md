@@ -19,6 +19,11 @@ resource layout and companion content before installation. Releasing another mod
 does not require another Manager or compatibility-data release. Older mods that
 need adaptation still use the revision pack's migration data and reviewed exceptions.
 
+Manager 1.32 distinguishes Windows permission errors, missing files and real file locks.
+Permission errors explain when to run the Manager as administrator. Lock errors name
+the blocking application when Windows can identify it. Read-only resource files are
+made writable for mod changes; folder permissions and security rules are kept.
+
 Complete application updates use a separate, fixed `application-updates` release.
 Its signed indexes point to complete app releases. Game compatibility updates and
 application updates are distributed independently.
