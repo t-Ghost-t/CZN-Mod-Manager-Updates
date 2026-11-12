@@ -29,6 +29,9 @@ updates recover on the next launch.
 Full application self-updating is available beginning with Manager 1.24. Earlier
 builds only support compatibility-data downloads and require this initial upgrade.
 
-Preview releases have automated sandbox validation; live gameplay may be unverified.
+Routine compatibility previews have compiler and signed-artifact validation. Per-mod
+installation/restoration sandbox tests are optional for those data updates. Application
+releases have separate updater and runtime tests. Release notes identify the validation
+performed; live gameplay may be unverified.
 This is an unofficial community tool and is not affiliated with the game's developer
 or publisher. Do not submit game archives or private keys in issues.
