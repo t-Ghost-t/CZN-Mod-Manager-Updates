@@ -16,7 +16,10 @@ Complete application updates use a separate, fixed `application-updates` release
 Its signed indexes point to complete app releases. Game compatibility updates and
 application updates are distributed independently.
 
-In the Manager, choose **Tools > Check for updates**. An available application
+The Manager checks for application updates and game compatibility updates each time
+it starts, even if no game is detected. New compatibility data downloads automatically.
+An available app update prompts you to update and restart. Unchanged installations stay
+quiet. You can also choose **Tools > Check for updates** at any time. An available application
 update offers **Update and restart**. It can replace the outer launcher, packaged
 runtime, native components and legal files, and add or retire application files.
 Libraries, settings, selections, backups and Qt overrides are preserved. Downloads
