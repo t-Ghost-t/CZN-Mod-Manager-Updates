@@ -1,21 +1,34 @@
-# CZN Mod Manager compatibility updates
+# CZN Mod Manager updates
 
-Signed compatibility data for CZN Mod Manager. This repository distributes data only.
-It does not contain CZN game code, clean game resources, private migration records,
-mod artwork packages, or signing secrets.
+This repository distributes signed game-compatibility data and complete CZN Mod
+Manager application releases. It does not contain CZN game code, clean game
+resources, private migration records, original mod packages, or signing secrets.
 
-The manager selects support for the exact installed resource revision and verifies it
-against a public signing key embedded in the application. Downloading a key from this
-repository does not establish trust. Changed game formats require an application update.
+The Manager verifies downloads against a public key built into the application.
+Downloading a key from this repository does not establish trust.
 
-Release assets include a signed stable index and a separate signed preview index.
-Preview support is for owner testing and is rejected by stable application builds.
-A published preview does not mean gameplay or native Windows testing has passed.
+Compatibility releases contain `index.json` and `preview-index.json`. They bind
+support to the exact installed game revision. Missing support blocks game-file
+changes and preserves the mod library and selected load order. A game update can
+replace only some files; clean recovery data may still require the official
+launcher's Verify/Repair. The Manager does not delete game resources.
 
-If support for a new game revision is unavailable, the manager keeps the library and
-selected load order and blocks changes to game resources until matching support exists.
-Close both the game and launcher before applying mods. Missing clean data may require
-Verify/Repair in the official launcher. The manager does not delete game resources.
+Complete application updates use a separate, fixed `application-updates` release.
+Its signed `app-index.json` and `preview-app-index.json` point to immutable app
+release archives. Publishing compatibility data does not displace the app channel.
+Preview and stable channels are separate.
 
+In the Manager, choose **Tools > Check for updates**. An available application
+update offers **Update and restart**. It can replace the outer launcher, packaged
+runtime, native components and legal files, and add or retire application files.
+Libraries, settings, selections, backups and Qt overrides are preserved. Downloads
+are verified before replacement. A retained helper waits for the Manager to exit,
+keeps a durable rollback journal, and checks that the new app starts. Interrupted
+updates recover on the next launch.
+
+Full application self-updating is available beginning with Manager 1.24. Earlier
+builds only support compatibility-data downloads and require this initial upgrade.
+
+Preview releases have automated sandbox validation; live gameplay may be unverified.
 This is an unofficial community tool and is not affiliated with the game's developer
 or publisher. Do not submit game archives or private keys in issues.
