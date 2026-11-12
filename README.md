@@ -12,6 +12,13 @@ changes and preserves the mod library and selected load order. A game update can
 replace only some files; clean recovery data may still require the official
 launcher's Verify/Repair. The Manager does not delete game resources.
 
+Starting with Manager 1.31, newly released signed mods exported for the supported
+current game build install without being registered in a compatibility pack. The
+Manager authenticates their records against the signed clean catalog and checks
+resource layout and companion content before installation. Releasing another mod
+does not require another Manager or compatibility-data release. Older mods that
+need adaptation still use the revision pack's migration data and reviewed exceptions.
+
 Complete application updates use a separate, fixed `application-updates` release.
 Its signed indexes point to complete app releases. Game compatibility updates and
 application updates are distributed independently.
