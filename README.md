@@ -12,12 +12,14 @@ changes and preserves the mod library and selected load order. A game update can
 replace only some files; clean recovery data may still require the official
 launcher's Verify/Repair. The Manager does not delete game resources.
 
-Starting with Manager 1.31, newly released signed mods exported for the supported
-current game build install without being registered in a compatibility pack. The
-Manager authenticates their records against the signed clean catalog and checks
-resource layout and companion content before installation. Releasing another mod
-does not require another Manager or compatibility-data release. Older mods that
-need adaptation still use the revision pack's migration data and reviewed exceptions.
+Starting with Manager 1.34, signed mods can also use older game revisions without
+being registered in a compatibility pack. Each game update includes a complete clean
+fingerprint catalog and compact differences from retained historical catalogs. The
+Manager uses those fingerprints to verify the mod's original resources and companion
+content, even for a package it has never seen. Releasing another compatible mod requires
+no Manager update or compatibility-data publication. Only changes to actual game content
+can require adaptation; a different build number alone does not reject a mod. Existing
+migrations and reviewed exceptions still apply where game content really changed.
 
 Manager 1.32 distinguishes Windows permission errors, missing files and real file locks.
 Permission errors explain when to run the Manager as administrator. Lock errors name
